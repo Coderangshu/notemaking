@@ -32,7 +32,6 @@
     <li>
       <a href="#frontend-setting-up">Frontend setting up</a>
     </li>
-    <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
 
@@ -47,13 +46,13 @@
 <p align="center">
 Home Page Dark Mode
 </p>
-<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Home%20Page%20Dark.png">  
+<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Home%20Page%20Dark.png">  
 </td>
   <td width="50%">      
 <p align="center">
 Home Page Light Mode
 </p>
-<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Home%20Page%20light.png">
+<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Home%20Page%20light.png">
 </td> 
 </table>
 <br/>
@@ -64,13 +63,13 @@ Home Page Light Mode
 <p align="center">
 Note Page Dark Mode
 </p>
-<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Notes%20Dark.png">  
+<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Notes%20Dark.png">  
 </td>
   <td width="50%">      
 <p align="center">
 Note Page Light Mode
 </p>
-<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Notes%20Ligth.png">
+<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Notes%20Ligth.png">
 </td> 
 </table>
 <br/>
