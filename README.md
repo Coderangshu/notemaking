@@ -6,13 +6,13 @@
   <p align="center">
     A notes app using Django REST Framework and React Js styled using tailwind Css
     <br />
-    <a href="https://github.com/Jauharmuhammed/notes-app-django-react"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/coderangshu/notemaking"><strong>Explore the docs »</strong></a>
     <br />
-    <a href="https://notes-django-react.up.railway.app/">View Site</a>
+    <!-- <a href="https://notes-django-react.up.railway.app/">View Site</a> -->
     ·
-    <a href="https://github.com/Jauharmuhammed/notes-app-django-react/issues">Report Bug</a>
+    <a href="https://github.com/coderangshu/notemaking/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Jauharmuhammed/notes-app-django-react/issues">Request Feature</a>
+    <a href="https://github.com/coderangshu/notemaking/issues">Request Feature</a>
   </p>
 </div>
 
@@ -47,13 +47,13 @@
 <p align="center">
 Home Page Dark Mode
 </p>
-<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Home%20Page%20Dark.png">  
+<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Home%20Page%20Dark.png">  
 </td>
   <td width="50%">      
 <p align="center">
 Home Page Light Mode
 </p>
-<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Home%20Page%20light.png">
+<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Home%20Page%20light.png">
 </td> 
 </table>
 <br/>
@@ -64,13 +64,13 @@ Home Page Light Mode
 <p align="center">
 Note Page Dark Mode
 </p>
-<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Notes%20Dark.png">  
+<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Notes%20Dark.png">  
 </td>
   <td width="50%">      
 <p align="center">
 Note Page Light Mode
 </p>
-<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Notes%20Ligth.png">
+<img src="https://github.com/coderangshu/notemaking/blob/main/frontend/public/Notes%20Ligth.png">
 </td> 
 </table>
 <br/>
@@ -94,7 +94,7 @@ This is a sample for Django Project.
 Clone the project. This will download the GitHub respository files onto your local machine.
 
 ```Shell
-git clone https://github.com/Jauharmuhammed/notes-app-django-react
+git clone https://github.com/coderangshu/notemaking
 ```
 
 To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
@@ -167,30 +167,4 @@ npm run start
 <br>
 <br>
 <br>
-
-
-
-## Contact
-
-<div align='left'>
-
-<a href="https://linkedin.com/in/jauharmuhammed" target="_blank">
-<img src="https://img.shields.io/badge/linkedin-%2300acee.svg?color=405DE6&style=for-the-badge&logo=linkedin&logoColor=white" alt=linkedin style="margin-bottom: 5px;"/>
-</a>
-	
-<a href="https://twitter.com/jauharmuhammed_" target="_blank">
-<img src="https://img.shields.io/badge/twitter-%2300acee.svg?color=1DA1F2&style=for-the-badge&logo=twitter&logoColor=white" alt=twitter style="margin-bottom: 5px;"/>
-</a>
-	
-<a href="mailto:jauharmuhammedk@gmail.com" target="_blank">
-<img src="https://img.shields.io/badge/gmail-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white" t=mail style="margin-bottom: 5px;" />
-</a>
-	
-		
-<a href="https://codepen.io/jauharmuhammed" target="_blank">
-<img src="https://img.shields.io/badge/codepen-%23000000.svg?style=for-the-badge&logo=codepen&logoColor=white" t=mail style="margin-bottom: 5px;" />
-</a>
-
-</div>
-
 
