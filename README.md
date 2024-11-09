@@ -1,70 +1,196 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<div align="center">
+  <h3 align="center">Django React Notes App</h3>
 
-## Available Scripts
+  <p align="center">
+    A notes app using Django REST Framework and React Js styled using tailwind Css
+    <br />
+    <a href="https://github.com/Jauharmuhammed/notes-app-django-react"><strong>Explore the docs »</strong></a>
+    <br />
+    <a href="https://notes-django-react.up.railway.app/">View Site</a>
+    ·
+    <a href="https://github.com/Jauharmuhammed/notes-app-django-react/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/Jauharmuhammed/notes-app-django-react/issues">Request Feature</a>
+  </p>
+</div>
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href='#setting-up-backend-api'>Setting up Backend API</a></li>
+    <li>
+      <a href="#frontend-setting-up">Frontend setting up</a>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## About The Project
+<br>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<table width="100%"> 
+<tr>
 
-### `npm run build`
+<td width="50%">
+<p align="center">
+Home Page Dark Mode
+</p>
+<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Home%20Page%20Dark.png">  
+</td>
+  <td width="50%">      
+<p align="center">
+Home Page Light Mode
+</p>
+<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Home%20Page%20light.png">
+</td> 
+</table>
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<table width="100%"> 
+<tr>
+<td width="50%">
+<p align="center">
+Note Page Dark Mode
+</p>
+<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Notes%20Dark.png">  
+</td>
+  <td width="50%">      
+<p align="center">
+Note Page Light Mode
+</p>
+<img src="https://github.com/Jauharmuhammed/notes-app-django-react/blob/main/frontend/public/Notes%20Ligth.png">
+</td> 
+</table>
+<br/>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built With
 
-### `npm run eject`
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<br>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Setting up Backend API 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is a sample for Django Project.
 
-## Learn More
+Clone the project. This will download the GitHub respository files onto your local machine.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```Shell
+git clone https://github.com/Jauharmuhammed/notes-app-django-react
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
 
-### Code Splitting
+```
+pip install virtualenv
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Clone or download this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
 
-### Analyzing the Bundle Size
+```
+virtualenv venv
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
 
-### Making a Progressive Web App
+```
+source venv/bin/active
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Then install the project dependencies with
 
-### Advanced Configuration
+```
+pip install -r requirements.txt
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Apply migrations and create your database
+```
+python manage.py migrate
+```
+Create a user with manage.py
+```
+python manage.py createsuperuser
+```
 
-### Deployment
+Now you can run the project with this command
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```
+python manage.py runserver
+```
 
-### `npm run build` fails to minify
+<br>
+<br>
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Frontend setting up
+
+### Frontend Instructions (Create React App) 
+
+---> Navigate to the `frontend/` directory
+
+```Shell
+cd frontend
+```
+
+---> Install the project dependencies
+
+```Shell
+npm install
+```
+
+---> Start the development server on localhost:3000
+
+```Shell
+npm run start
+```
+
+---> Open your browser and navigate to either `http://localhost:3000 or http://127.0.0.1:3000`
+<br>
+<br>
+<br>
+
+
+
+## Contact
+
+<div align='left'>
+
+<a href="https://linkedin.com/in/jauharmuhammed" target="_blank">
+<img src="https://img.shields.io/badge/linkedin-%2300acee.svg?color=405DE6&style=for-the-badge&logo=linkedin&logoColor=white" alt=linkedin style="margin-bottom: 5px;"/>
+</a>
+	
+<a href="https://twitter.com/jauharmuhammed_" target="_blank">
+<img src="https://img.shields.io/badge/twitter-%2300acee.svg?color=1DA1F2&style=for-the-badge&logo=twitter&logoColor=white" alt=twitter style="margin-bottom: 5px;"/>
+</a>
+	
+<a href="mailto:jauharmuhammedk@gmail.com" target="_blank">
+<img src="https://img.shields.io/badge/gmail-%23EA4335.svg?style=for-the-badge&logo=gmail&logoColor=white" t=mail style="margin-bottom: 5px;" />
+</a>
+	
+		
+<a href="https://codepen.io/jauharmuhammed" target="_blank">
+<img src="https://img.shields.io/badge/codepen-%23000000.svg?style=for-the-badge&logo=codepen&logoColor=white" t=mail style="margin-bottom: 5px;" />
+</a>
+
+</div>
+
+
