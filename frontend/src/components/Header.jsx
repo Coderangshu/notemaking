@@ -4,20 +4,20 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const logout = () => {
     localStorage.removeItem('username');
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
+    toggleDropdown();
     navigate("/login");
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleClickOutside = (event) => {

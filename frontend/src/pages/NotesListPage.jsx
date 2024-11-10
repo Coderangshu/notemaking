@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { MdAdd } from "react-icons/md";
-import { Link } from "react-router-dom";
-import ListItem from "../components/ListItem";
-import authAxios from "../services/AxiosInterceptor"
+import React, { useEffect, useState } from 'react';
+import { MdAdd } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import ListItem from '../components/ListItem';
+import authAxios from '../services/AxiosInterceptor';
+import AddNoteButton from '../components/AddNoteButton';
 
 
 const NotesListPage = ({ refreshList, refreshNotes }) => {
@@ -36,13 +37,7 @@ const NotesListPage = ({ refreshList, refreshNotes }) => {
           No notes available
         </div>
       )}
-      <button
-        className="fixed right-20 bottom-12 z-50 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300"
-      >
-        <Link className="h-full w-full flex justify-center items-center" to={`/note/new`}>
-          <MdAdd className="text-2xl" />
-        </Link>
-      </button>
+        <AddNoteButton/>
   </div>
   );
 };
