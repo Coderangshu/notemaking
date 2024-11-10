@@ -1,19 +1,19 @@
 import { useState } from "react";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./compontents/Footer";
+import Footer from "./components/Footer";
 
-import Header from "./compontents/Header";
+import Header from "./components/Header";
 import NotePage from "./pages/NotePage";
 import NotesListPage from "./pages/NotesListPage";
+import { ThemeProvider } from "next-themes";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true)
   return (
     <Router>
-      <div className={darkMode? 'dark': ''}>
+      <ThemeProvider attribute="class">
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-lexend ">
           <section className=" border-sky-600 px-4 md:px-16">
-            <Header darkMode={darkMode}  setDarkMode={setDarkMode}/>
+            <Header/>
             <Routes>
               <Route path="/" exact element={<NotesListPage />} />
               <Route path="/note/:id" element={<NotePage />} />
@@ -21,7 +21,7 @@ function App() {
             <Footer/>
           </section>
         </div>
-      </div>
+      </ThemeProvider>
     </Router>
   );
 }

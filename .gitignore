@@ -152,3 +152,9 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Python
+__pycache__
+
+# SQLite
+*.sqlite3

@@ -111,7 +111,7 @@ virtualenv venv
 That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
 
 ```
-source venv/bin/active
+source venv/bin/activate
 ```
 
 Then install the project dependencies with
@@ -159,7 +159,7 @@ npm install
 ---> Start the development server on localhost:3000
 
 ```Shell
-npm run start
+npm start
 ```
 
 ---> Open your browser and navigate to either `http://localhost:3000 or http://127.0.0.1:3000`

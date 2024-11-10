@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import ListItem from "../compontents/ListItem";
+import ListItem from "../components/ListItem";
 
 const NotesListPage = () => {
   const [notes, setNotes] = useState([]);
