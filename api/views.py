@@ -13,25 +13,25 @@ def getRoutes(request):
             'description': 'Returns an array of notes'
         },
         {
-            'Endpoint': '/notes/id',
+            'Endpoint': '/note/id',
             'method': 'GET',
             'body': None,
             'description': 'Returns a single note object'
         },
         {
-            'Endpoint': '/notes',
+            'Endpoint': '/notes/new',
             'method': 'POST',
             'body': {'body': ""},
             'description': 'Creates new note with data sent in post request'
         },
         {
-            'Endpoint': '/notes/id',
+            'Endpoint': '/note/id',
             'method': 'PUT',
             'body': {'body': ""},
             'description': 'Creates an existing note with data sent in post request'
         },
         {
-            'Endpoint': '/notes/id',
+            'Endpoint': '/note/id',
             'method': 'DELETE',
             'body': None,
             'description': 'Deletes and exiting note'

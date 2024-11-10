@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { MdArrowBackIosNew } from "react-icons/md";
+import { MdArrowBackIosNew, MdDelete } from "react-icons/md";
 
 let getTime = (note) => {
   return new Date(note?.created).toLocaleDateString();
@@ -19,7 +19,7 @@ const NotePage = () => {
   const getNote = (noteId) => {
     if (id === 'new') return
 
-    axios.get(`/api/notes/${noteId}/`).then((response) => {
+    axios.get(`/api/note/${noteId}/`).then((response) => {
       setNote(response.data);
     });
   };
@@ -31,13 +31,13 @@ const NotePage = () => {
   };
 
   const updateNote = async (noteId) => {
-    axios.put(`/api/notes/${noteId}/`, note).then((response) => {
+    axios.put(`/api/note/${noteId}/`, note).then((response) => {
       console.log(response.data);
     });
   };
 
   const deleteNote = (noteId) => {
-    axios.delete(`/api/notes/${noteId}/`).then((response) => {
+    axios.delete(`/api/note/${noteId}/`).then((response) => {
       navigate("/");
     });
   };
@@ -67,7 +67,7 @@ const NotePage = () => {
       <div className="flex justify-between items-center mb-5 md:my-4">
         <div
           onClick={handleUpdate}
-          className="w-10 h-10 flex justify-center items-center rounded-xl bg-gray-700 cursor-pointer"
+          className="w-10 h-10 flex justify-center items-center cursor-pointer"
         >
           <MdArrowBackIosNew className="text-white text-xl " />
         </div>
@@ -79,9 +79,9 @@ const NotePage = () => {
           Done
         </button>) : (<button
           onClick={() => deleteNote(id)}
-          className="text-white py-2 px-3  rounded-xl bg-gray-700"
+          className="text-red-500 text-xl flex items-center cursor-pointer py-2 px-3"
         >
-          Delete
+          <MdDelete/> 
         </button>)}
       </div>
       <textarea

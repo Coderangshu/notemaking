@@ -42,12 +42,8 @@ const ListItem = ({ note }) => {
           </Link>
         </div>
       ) : (
-        <div className="text-lg aspect-square rounded  hover:bg-slate-900 flex items-center justify-center">
-          <Link className=" h-full w-full" to={`/note/new`}>
-            <section className="flex justify-center h-full w-full">
-              <GrAdd color="white" className="text-3xl my-auto" />
-            </section>
-          </Link>
+        <div className="text-lg text-center text-white">
+          No notes present
         </div>
       )}
     </>
