@@ -11,7 +11,7 @@ function App() {
   return (
     <Router>
       <ThemeProvider attribute="class">
-        <div className="min-h-screen bg-gray-50 dark:bg-gray-900 font-lexend transition-colors duration-1000">
+        <div className="min-h-screen bg-yellow-100 dark:bg-gray-900 font-lexend transition-colors duration-1000">
           <section className=" border-sky-600 px-4 md:px-16">
             <Header/>
             <Routes>

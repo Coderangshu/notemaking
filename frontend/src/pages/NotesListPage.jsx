@@ -28,7 +28,7 @@ const NotesListPage = () => {
         ))}
       </div>
     ) : (
-      <div className="text-lg text-center text-white">
+      <div className="text-lg text-center dark:text-white">
         No notes available
       </div>
     )}
