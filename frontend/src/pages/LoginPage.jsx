@@ -22,6 +22,7 @@ const LoginPage = () => {
       if (response.data.access && response.data.refresh) {
         localStorage.setItem("access", response.data.access);
         localStorage.setItem("refresh", response.data.refresh);
+        localStorage.setItem("username", response.data.username);
 
         navigate("/notes");
       }
@@ -32,8 +33,8 @@ const LoginPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="p-8 rounded-lg shadow-lg w-96">
-        <h2 className="dark:text-white text-2xl font-bold text-center mb-6">Login to Notes App</h2>
+      <div className="p-8 rounded-lg shadow-lg w-96 mb-36">
+        <h2 className="text-2xl font-bold text-center mb-6">Login to Notes App</h2>
 
         {errorMessage && (
           <div className="text-red-500 text-sm mb-4 text-center">{errorMessage}</div>

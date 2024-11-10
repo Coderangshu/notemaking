@@ -34,7 +34,7 @@ const SignupPage = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="p-8 rounded-lg shadow-lg w-96">
+      <div className="p-8 rounded-lg shadow-lg mb-60 w-96">
         <h2 className="text-2xl font-bold text-center mb-6">Sign Up</h2>
 
         {errorMessage && (

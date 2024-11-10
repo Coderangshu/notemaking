@@ -7,7 +7,6 @@ authAxios.interceptors.request.use(async (config) => {
     const accessToken = localStorage.getItem("access");
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
-      console.log("Angshuman");
     }
     return config;
   },
