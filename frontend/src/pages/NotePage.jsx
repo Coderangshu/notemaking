@@ -66,12 +66,12 @@ const NotePage = ({ refreshNotes }) => {
           onClick={handleUpdate}
           className="w-10 h-10 flex justify-center items-center cursor-pointer"
         >
-          <MdArrowBackIosNew className="text-white text-xl " />
+          <MdArrowBackIosNew className="dark:text-white text-xl font-bold" />
         </div>
         <div className="dark:text-white">{id !=='new' && getTime(note)}</div>
         {id === 'new' ? (<button
           onClick={handleUpdate}
-          className="text-white py-2 px-3"
+          className="dark:text-white text-xl font-bold py-2 px-3"
         >
           <MdDone/>
         </button>) : (<button
