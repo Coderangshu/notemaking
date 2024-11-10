@@ -15,12 +15,24 @@ const NotesListPage = () => {
     getNotes();
   }, []);
 
+  const handleDeleteNote = (noteId) => {
+    setNotes((prevNotes) => prevNotes.filter((note) => note.id !== noteId));
+  };
+
   return (
-    <div className="pb-16 pt-4 min-h-[80vh] grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4  xl:grid-cols-5 gap-4 notes">
-      {notes.map((note, index) => (
-        <ListItem key={index} note={note} />
-      ))}
-    </div>
+    <div className="pb-16 pt-4 min-h-[80vh]">
+    {notes.length > 0 ? (
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 notes">
+        {notes.map((note) => (
+          <ListItem key={note.id} note={note} onDelete={handleDeleteNote} />
+        ))}
+      </div>
+    ) : (
+      <div className="text-lg text-center text-white">
+        No notes available
+      </div>
+    )}
+  </div>
   );
 };
 

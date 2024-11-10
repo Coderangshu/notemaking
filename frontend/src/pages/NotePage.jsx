@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { MdArrowBackIosNew, MdDelete } from "react-icons/md";
+import { MdArrowBackIosNew, MdDelete, MdDone } from "react-icons/md";
 
 let getTime = (note) => {
   return new Date(note?.created).toLocaleDateString();
@@ -42,8 +42,6 @@ const NotePage = () => {
     });
   };
 
-
-
   const handleUpdate = () => {
     if (id !== 'new' && !note.body){
       deleteNote(id)
@@ -55,11 +53,8 @@ const NotePage = () => {
     navigate("/");
   };
 
-  
-
   const handleNote = (value) => {
     setNote((note) => ({ ...note, body: value }));
-
   };
 
   return (
@@ -74,9 +69,9 @@ const NotePage = () => {
         <div className="dark:text-white">{id !=='new' && getTime(note)}</div>
         {id === 'new' ? (<button
           onClick={handleUpdate}
-          className="text-white py-2 px-3  rounded-xl bg-gray-700"
+          className="text-white py-2 px-3"
         >
-          Done
+          <MdDone/>
         </button>) : (<button
           onClick={() => deleteNote(id)}
           className="text-red-500 text-xl flex items-center cursor-pointer py-2 px-3"
