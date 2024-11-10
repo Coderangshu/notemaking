@@ -1,6 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { transition, whileTap } from "./constants";
+
+const transition = {
+  type: "spring",
+  stiffness: 200,
+  damping: 10,
+};
+  
+const whileTap = {
+  scale: 0.95,
+  rotate: 15,
+};
 
 export const MoonIcon = () => {
   const [mounted, setMounted] = useState(false);

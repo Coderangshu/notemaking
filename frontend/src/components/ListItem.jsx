@@ -1,12 +1,8 @@
 import React from "react";
+import moment from "moment";
 import { Link, useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
-import moment from "moment";
-import axios from "axios";
-
-let getTime = (note) => {
-  return new Date(note.updated).toLocaleDateString();
-};
+import autAxios from "../services/AxiosInterceptor"
 
 const getTitle = (note) => {
   let title = note.body.split("\n")[0];
@@ -27,16 +23,15 @@ let getContent = (note) => {
   }
 }
 
-const ListItem = ({ note, onDelete }) => {
+const ListItem = ({ note, onDelete, refreshNotes }) => {
   const navigate = useNavigate();
 
   const handleDelete = (noteId) => {
-    if (window.confirm("Are you sure you want to delete this note?")) {
-      axios.delete(`/api/note/${noteId}/`).then(() => {
-        onDelete(noteId); // Remove the card after deletion
-        navigate("/");
-      });
-    }
+    autAxios.delete(`/api/note/${noteId}/`).then((response) => {
+      onDelete(noteId);
+      refreshNotes();
+      navigate("/");
+    });
   };
 
   return (

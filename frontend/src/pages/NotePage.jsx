@@ -1,43 +1,45 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { MdArrowBackIosNew, MdDelete, MdDone } from "react-icons/md";
+import authAxios from "../services/AxiosInterceptor";
 
 let getTime = (note) => {
   return new Date(note?.created).toLocaleDateString();
 };
 
-const NotePage = () => {
+const NotePage = ({ refreshNotes }) => {
   const [note, setNote] = useState(null);
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const getNote = (noteId) => {
+    if (id === 'new') return
+    authAxios.get(`/api/note/${noteId}/`).then((response) => {
+      setNote(response.data);
+    });
+  };
 
   useEffect(() => {
     getNote(id);
   }, [id]);
 
-  const getNote = (noteId) => {
-    if (id === 'new') return
-
-    axios.get(`/api/note/${noteId}/`).then((response) => {
-      setNote(response.data);
-    });
-  };
-
   const createNote = async () => {
-    axios.post(`/api/notes/`, note).then((response) => {
-      console.log(response.data);
+    authAxios.post(`/api/notes/`, note).then((response) => {
+      refreshNotes();
+      navigate("/");
     });
   };
 
   const updateNote = async (noteId) => {
-    axios.put(`/api/note/${noteId}/`, note).then((response) => {
-      console.log(response.data);
+    authAxios.put(`/api/note/${noteId}/`, note).then((response) => {
+      refreshNotes();
+      navigate("/");
     });
   };
 
   const deleteNote = (noteId) => {
-    axios.delete(`/api/note/${noteId}/`).then((response) => {
+    authAxios.delete(`/api/note/${noteId}/`).then((response) => {
+      refreshNotes();
       navigate("/");
     });
   };
