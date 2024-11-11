@@ -18,8 +18,8 @@ function App() {
     <Router>
       <ThemeProvider attribute="class">
         <div className="min-h-screen bg-yellow-100 dark:bg-gray-900 dark:text-white font-lexend transition-colors duration-1000">
-          <section className=" border-sky-600 px-4 md:px-16">
             <Header/>
+          <section className=" border-sky-600 px-4 md:px-16">
             <Routes>
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
@@ -27,8 +27,8 @@ function App() {
               <Route path="/" exact element={<NotesListPage refreshList={refreshList} refreshNotes={refreshNotes}/>} />
               <Route path="/note/:id" element={<NotePage refreshNotes={refreshNotes}/>} />
             </Routes>
-            <Footer/>
           </section>
+            <Footer/>
         </div>
       </ThemeProvider>
     </Router>
