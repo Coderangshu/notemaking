@@ -7,6 +7,7 @@ const Header = () => {
   const location = useLocation();
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
+  const username = localStorage.getItem("username");
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -38,13 +39,13 @@ const Header = () => {
       </Link>
       <div className="flex items-center space-x-4">
         <ThemeModeToggler />
-        {location.pathname !== '/login' && location.pathname !== '/signup' && (
+        {username && location.pathname !== '/login' && location.pathname !== '/signup' && (
           <div className="relative" ref={dropdownRef}>
             <button 
               onClick={toggleDropdown} 
               className="bg-blue-600 text-white text-xl rounded-full w-10 h-10 flex items-center justify-center uppercase"
             >
-              {localStorage.getItem("username").charAt(0)}
+              {username}
             </button>
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded shadow-lg py-2">

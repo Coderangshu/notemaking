@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { MdAdd } from 'react-icons/md';
-import { Link } from 'react-router-dom';
 import ListItem from '../components/ListItem';
 import authAxios from '../services/AxiosInterceptor';
 import AddNoteButton from '../components/AddNoteButton';
