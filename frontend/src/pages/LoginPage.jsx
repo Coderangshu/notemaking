@@ -22,7 +22,6 @@ const LoginPage = () => {
       if (response.data.access && response.data.refresh) {
         localStorage.setItem("access", response.data.access);
         localStorage.setItem("refresh", response.data.refresh);
-        localStorage.setItem("username", response.data.username);
 
         navigate("/notes");
       }

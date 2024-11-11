@@ -17,11 +17,34 @@ def getRoutes(request):
         {'Endpoint': '/note/<id>/', 'method': 'PUT', 'description': 'Updates a note if the user is the owner'},
         {'Endpoint': '/note/<id>/', 'method': 'DELETE', 'description': 'Deletes a note if the user is the owner'},
         {'Endpoint': '/note/<id>/share/', 'method': 'POST', 'description': 'Shares a note with a user'},
+        {'Endpoint': '/token/refresh/', 'method': 'POST', 'description': 'Return new access token for a given refresh token'},
         {'Endpoint': '/auth/signup/', 'method': 'POST', 'description': 'Registers a new user'},
         {'Endpoint': '/auth/login/', 'method': 'POST', 'description': 'Logs in the user'},
         {'Endpoint': '/auth/logout/', 'method': 'POST', 'description': 'Logs out the user'},
     ]
     return Response(routes)
+
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
+from django.utils.decorators import method_decorator
+
+@api_view(['POST'])
+@permission_classes([AllowAny])  # Allows any user to access the endpoint
+def tokenRefresh(request):
+    refresh_token = request.data.get("refresh")
+
+    if refresh_token is None:
+        return Response({"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST)
+
+    try:
+        token = RefreshToken(refresh_token)
+        access_token = str(token.access_token)
+        return Response({"access": access_token}, status=status.HTTP_200_OK)
+    except Exception as e:
+        return Response({"error": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 
 @api_view(['POST'])
 @permission_classes([AllowAny])

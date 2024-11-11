@@ -1,20 +1,31 @@
 import React, { useEffect, useState, useRef } from 'react';
 import ThemeModeToggler from './ThemeModeToggler';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { jwtDecode } from "jwt-decode";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
-  const username = localStorage.getItem("username");
+  const [username, setUsername] = useState(null);
+  useEffect(() => {
+    const token = localStorage.getItem("access");
+    if (token) {
+      try {
+        const decodedToken = jwtDecode(token);
+        setUsername(decodedToken.username);
+      } catch (error) {
+        console.error("Invalid token:", error);
+      }
+    }
+  }, []);
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   const logout = () => {
-    localStorage.removeItem('username');
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
     toggleDropdown();

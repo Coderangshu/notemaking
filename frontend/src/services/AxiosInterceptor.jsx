@@ -31,10 +31,8 @@ authAxios.interceptors.response.use((response) => response, async (error) => {
           return authAxios(originalRequest);
         } catch (refreshError) {
           // If refresh fails, clear storage and redirect to login
-          console.log("REACHED HERE");
           localStorage.removeItem("access");
           localStorage.removeItem("refresh");
-          localStorage.removeItem("username");
           window.location.href = "/login";
           return Promise.reject(refreshError);
         }

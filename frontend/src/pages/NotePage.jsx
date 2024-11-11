@@ -12,14 +12,13 @@ const NotePage = ({ refreshNotes }) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const getNote = (noteId) => {
-    if (id === 'new') return
-    authAxios.get(`/api/note/${noteId}/`).then((response) => {
-      setNote(response.data);
-    });
-  };
-
   useEffect(() => {
+    const getNote = (noteId) => {
+      if (noteId === "new") return;
+      authAxios.get(`/api/note/${noteId}/`).then((response) => {
+        setNote(response.data);
+      });
+    };
     getNote(id);
   }, [id]);
 
