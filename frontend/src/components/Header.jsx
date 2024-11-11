@@ -45,7 +45,7 @@ const Header = () => {
               onClick={toggleDropdown} 
               className="bg-blue-600 text-white text-xl rounded-full w-10 h-10 flex items-center justify-center uppercase"
             >
-              {username}
+              {username.charAt(0)}
             </button>
             {isDropdownOpen && (
               <div className="absolute right-0 mt-2 w-32 bg-white dark:bg-gray-800 rounded shadow-lg py-2">
