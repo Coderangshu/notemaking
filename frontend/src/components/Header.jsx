@@ -35,7 +35,7 @@ const Header = () => {
   return (
     <div className="duration-500 bg-yellow-100/70 dark:bg-gray-900/80 backdrop-blur-lg dark:text-white font-lexend sticky z-50 top-0 flex justify-between items-center px-20 will-change-auto ease-in-out">
       <Link to="/">
-        <div className="text-4xl py-8 font-bold">Notes.</div>
+        <div className="text-4xl py-8 font-bold pacifico-regular">Notes.</div>
       </Link>
       <div className="flex items-center space-x-4">
         <ThemeModeToggler />
