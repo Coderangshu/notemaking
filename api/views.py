@@ -40,7 +40,9 @@ def login(request):
         user = authenticate(username=serializer.validated_data['username'], password=serializer.validated_data['password'])
         if user:
             refresh = RefreshToken.for_user(user)
-            return Response({'refresh': str(refresh), 'access': str(refresh.access_token), 'username': str(user)}, status=status.HTTP_200_OK)
+            access = refresh.access_token
+            access['username'] = user.username
+            return Response({'refresh': str(refresh), 'access': str(access)}, status=status.HTTP_200_OK)
         return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
