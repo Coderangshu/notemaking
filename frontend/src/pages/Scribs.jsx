@@ -8,6 +8,7 @@ import { FaRegCircle } from "react-icons/fa6";
 import authAxios from "../services/AxiosInterceptor";
 import { TiPlus } from "react-icons/ti";
 import { MdDone } from "react-icons/md";
+import { jsPDF } from "jspdf";
 
 import {
   Arrow,
@@ -210,14 +211,20 @@ export default function Scribs() {
     isPaining.current = false;
   }
 
+  //exporting to pdf format 
   function handleExport() {
-    const uri = stageRef.current.toDataURL();
-    var link = document.createElement("a");
-    link.download = "image.png";
-    link.href = uri;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const uri = stageRef.current.toDataURL(); // Get canvas data as image
+    
+    const pdf = new jsPDF({
+      orientation: "portrait", // or "landscape"
+      unit: "mm",
+      format: "a4", // You can choose other formats
+    });
+    const imgProps = pdf.getImageProperties(uri);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width; // Maintain aspect ratio
+    pdf.addImage(uri, "PNG", 0, 0, pdfWidth, pdfHeight); // Add image to PDF
+    pdf.save("exported-document.pdf"); // Save the PDF
   }
 
   function onClick(e) {
