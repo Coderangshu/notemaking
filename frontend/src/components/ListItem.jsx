@@ -3,7 +3,6 @@ import moment from "moment";
 import { Link, useNavigate } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 import autAxios from "../services/AxiosInterceptor"
-import Scribble from "../pages/Scribble";
 
 const getTitle = (note) => {
   let title = note.body.split("\n")[0];
@@ -43,8 +42,7 @@ const ListItem = ({ note, type, onDelete, refreshNotes }) => {
           <Link to={`/scribble/${note.id}`}>
             <section className="p-3 md:p-5 h-full flex flex-col justify-between">
               <section>
-                <section className="text-base md:text-lg">{getTitle(note)}</section>
-                <section className="text-sm md:text-base text-gray-800 mt-1 md:mt-3">{getContent(note)}</section>
+              <h1 className="text-4xl">Scribble-{note.id}</h1>
               </section>
               <section className="text-xs md:text-sm text-gray-700">{moment(note.updated).fromNow()}</section>
             </section>
