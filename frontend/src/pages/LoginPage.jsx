@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
-const LoginPage = () => {
-  const [username, setUsername] = useState("");
+const LoginPage = ({ username, setUsername }) => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
 
     try {
       // POST request to login
@@ -22,6 +23,8 @@ const LoginPage = () => {
       if (response.data.access && response.data.refresh) {
         localStorage.setItem("access", response.data.access);
         localStorage.setItem("refresh", response.data.refresh);
+        const decodedToken = jwtDecode(response.data.access);
+        setUsername(decodedToken.username);
 
         navigate("/notes");
       }

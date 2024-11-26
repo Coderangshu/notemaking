@@ -80,4 +80,3 @@ const ListItem = ({ note, type, onDelete, refreshNotes }) => {
 };
 
 export default ListItem;
-

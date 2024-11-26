@@ -3,23 +3,37 @@ import ThemeModeToggler from './ThemeModeToggler';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
 
-const Header = () => {
+const Header = ({ username, setUsername }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const location = useLocation();
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
-  const [username, setUsername] = useState(null);
+
+
   useEffect(() => {
     const token = localStorage.getItem("access");
     if (token) {
       try {
         const decodedToken = jwtDecode(token);
+        // console.log(decodedToken);
+        console.log(decodedToken.username);
         setUsername(decodedToken.username);
       } catch (error) {
         console.error("Invalid token:", error);
       }
     }
   }, []);
+
+  const token = localStorage.getItem("access");
+  if (!username && token) {
+    try {
+      const decodedToken = jwtDecode(token);
+      setUsername(decodedToken.username);
+    } catch (error) {
+      console.error("Invalid token:", error);
+    }
+  }
+
 
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
@@ -28,6 +42,7 @@ const Header = () => {
   const logout = () => {
     localStorage.removeItem('access');
     localStorage.removeItem('refresh');
+    setUsername("");
     toggleDropdown();
     navigate("/login");
   };
