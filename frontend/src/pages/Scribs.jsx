@@ -235,10 +235,10 @@ export default function Scribs() {
 
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden" style={{height:'auto', overflow:'auto'}}>
+      <div className="relative w-full h-screen overflow-auto">
         {/* {console.log(page)} */}
         <div className="absolute top-0 z-10 w-full py-2 ">
-          <div className="flex justify-center items-center gap-3 py-2 px-3 w-fit mx-auto border shadow-lg rounded-lg">
+          <div className="flex justify-center items-center gap-3 py-2 px-3 w-fit mx-auto overflow-x-auto border shadow-lg rounded-lg">
             <button
               className={
                 action === ACTIONS.SELECT
@@ -314,6 +314,7 @@ export default function Scribs() {
           ref={stageRef}
           width={window.innerWidth}
           height={window.innerHeight}
+          style={{ minWidth: "100%", minHeight: "100%" }}
           onPointerDown={onPointerDown}
           onPointerMove={onPointerMove}
           onPointerUp={onPointerUp}

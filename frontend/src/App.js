@@ -51,7 +51,7 @@ function App() {
   return (
     <Router>
       <ThemeProvider attribute="class">
-        <div className="min-h-screen bg-yellow-100 dark:bg-gray-900 dark:text-white font-lexend transition duration-500 ease-in-out">
+        <div className="min-h-screen bg-yellow-100 dark:bg-gray-900 font-lexend transition duration-500 ease-in-out">
             <Header username={username} setUsername={setUsername} />
           <section className=" border-sky-600 px-4 md:px-16">
             <Routes>

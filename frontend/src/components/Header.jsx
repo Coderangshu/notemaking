@@ -59,11 +59,11 @@ const Header = ({ username, setUsername }) => {
   }, []);
 
   return (
-    <div className="duration-500 bg-yellow-100/70 dark:bg-gray-900/80 backdrop-blur-lg dark:text-white font-lexend sticky z-50 top-0 flex justify-between items-center px-20 will-change-auto ease-in-out">
+    <div className="duration-500 bg-yellow-100/70 dark:bg-gray-900/80 backdrop-blur-lg dark:text-white font-lexend sticky z-50 top-0 flex justify-between items-center lg:px-20 px-5 md:px-10 sm:px-10 will-change-auto ease-in-out">
       <Link to="/">
         <div className="text-4xl py-8 font-bold pacifico-regular">Notes.</div>
       </Link>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center justify-end gap-6 sm:gap-4 w-full">
         <ThemeModeToggler />
         {username && location.pathname !== '/login' && location.pathname !== '/signup' && (
           <div className="relative" ref={dropdownRef}>

@@ -38,13 +38,13 @@ const ListItem = ({ note, type, onDelete, refreshNotes }) => {
     <>
       {note && type==="scribble3847261930" ? 
       (
-        <div className="text-lg aspect-square rounded hover:bg-slate-900 relative">
+        <div className="aspect-square rounded hover:bg-slate-900 relative">
           <Link to={`/scribble/${note.id}`}>
             <section className="p-3 md:p-5 h-full flex flex-col justify-between">
               <section>
-              <h1 className="text-4xl">Scribble-{note.id}</h1>
+              <h1 className="text-lg mg:text-xl lg:text-2xl text-gray-800 text-wrap">Scribble-{note.id}</h1>
               </section>
-              <section className="text-xs md:text-sm text-gray-700">{moment(note.updated).fromNow()}</section>
+              <section className="text-xs text-gray-700">{moment(note.updated).fromNow()}</section>
             </section>
           </Link>
           <button
@@ -55,12 +55,12 @@ const ListItem = ({ note, type, onDelete, refreshNotes }) => {
           </button>
         </div>
       ) : (
-        <div className="text-lg aspect-square rounded hover:bg-slate-900 relative">
+        <div className="aspect-square rounded hover:bg-slate-900 relative">
           <Link to={`/note/${note.id}`}>
             <section className="p-3 md:p-5 h-full flex flex-col justify-between">
               <section>
-                <section className="text-base md:text-lg">{getTitle(note)}</section>
-                <section className="text-sm md:text-base text-gray-800 mt-1 md:mt-3">{getContent(note)}</section>
+                <h1 className="text-lg mg:text-xl lg:text-2xl text-gray-800 text-wrap">{getTitle(note)}</h1>
+                <section className="text-sm md:text-lg lg:text-xl text-gray-800 text-wrap mt-1 md:mt-3">{getContent(note)}</section>
               </section>
               <section className="text-xs md:text-sm text-gray-700">{moment(note.updated).fromNow()}</section>
             </section>
