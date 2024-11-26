@@ -8,9 +8,9 @@ const AddNoteButton = () => {
   const togglePopup = () => setIsPopupOpen(!isPopupOpen);
 
   return (
-    <div className="fixed right-20 bottom-12 z-50 items-center">
+    <div className="fixed right-20 bottom-12 z-50 flex items-center">
       {isPopupOpen && (
-        <div className="mb-4 flex flex-col items-center space-y-2">
+        <div className="flex flex-row-reverse items-center space-x-reverse space-x-2">
           <Link
             to="/note/new"
             className="bg-gray-100 text-gray-700 p-2 rounded-lg shadow-lg hover:bg-gray-200 flex items-center space-x-2 transition-colors duration-300"
@@ -38,4 +38,3 @@ const AddNoteButton = () => {
 };
 
 export default AddNoteButton;
-
