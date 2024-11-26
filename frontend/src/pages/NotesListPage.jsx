@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ListItem from '../components/ListItem';
 import authAxios from '../services/AxiosInterceptor';
-import AddNoteButton from '../components/AddNoteButton';
 import Scribs from './Scribs';
+import ExpandableButton from '../components/ExpandableButton';
 
 const NotesListPage = ({ refreshList, refreshNotes }) => {
   const [notes, setNotes] = useState([]);
@@ -51,7 +51,7 @@ const NotesListPage = ({ refreshList, refreshNotes }) => {
           No notes available
         </div>
       )}
-        <AddNoteButton/>
+      <ExpandableButton/>
   </div>
   );
 };
