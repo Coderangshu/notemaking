@@ -158,4 +158,4 @@ __pycache__
 venv
 
 # SQLite
-*.sqlite3
+# *.sqlite3
