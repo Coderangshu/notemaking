@@ -7,9 +7,17 @@ import NotePage from "./pages/NotePage";
 import NotesListPage from "./pages/NotesListPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
+import Scribble from "./pages/Scribble";
+import Scribs from "./pages/Scribs";
 
 function App() {
   const [refreshList, setRefreshList] = useState(false);
+  const [canvasHeight, setCanvasHeight] = useState(window.innerHeight); // Initial canvas height
+
+  const increaseCanvasHeight = () => {
+    setCanvasHeight((prevHeight) => prevHeight + 50); // Increase height by 50px
+  };
+
   const refreshNotes = () => {
     setRefreshList((prev) => !prev);
   };
@@ -26,6 +34,8 @@ function App() {
               <Route path="/notes" exact element={<NotesListPage refreshList={refreshList} refreshNotes={refreshNotes}/>} />
               <Route path="/" exact element={<NotesListPage refreshList={refreshList} refreshNotes={refreshNotes}/>} />
               <Route path="/note/:id" element={<NotePage refreshNotes={refreshNotes}/>} />
+              <Route path="/scribble/:id" element={<Scribs/>} />
+              <Route path="/note/scribble/:id" element={<Scribble canvasHeight={canvasHeight} increaseCanvasHeight={increaseCanvasHeight} />} />
             </Routes>
           </section>
             <Footer/>

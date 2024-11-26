@@ -20,7 +20,7 @@ class NoteSerializer(ModelSerializer):
 
     class Meta:
         model = Note
-        fields = ['id', 'body', 'updated', 'created', 'owner', 'permissions']
+        fields = ['id', 'body', 'updated', 'created', 'owner', 'permissions', 'type']
 
 class SignupSerializer(ModelSerializer):
     password = CharField(write_only=True)

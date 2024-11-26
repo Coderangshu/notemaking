@@ -19,7 +19,7 @@ const AddNoteButton = () => {
             <span>Text</span>
           </Link>
           <Link
-            to="/note/new-scribble"
+            to="/note/scribble/new"
             className="bg-gray-100 text-gray-700 p-2 rounded-lg shadow-lg hover:bg-gray-200 flex items-center space-x-2 transition-colors duration-300"
           >
             <MdGesture className="text-lg" />

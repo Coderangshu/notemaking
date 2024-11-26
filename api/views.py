@@ -13,6 +13,7 @@ def getRoutes(request):
     routes = [
         {'Endpoint': '/notes/', 'method': 'GET', 'description': 'Returns notes accessible by the user'},
         {'Endpoint': '/notes/', 'method': 'POST', 'description': 'Creates a new note for the user'},
+        {'Endpoint': '/notes/scribble/', 'method': 'POST', 'description': 'Creates a new scribble for the user'},
         {'Endpoint': '/note/<id>/', 'method': 'GET', 'description': 'Returns a single note if user has access'},
         {'Endpoint': '/note/<id>/', 'method': 'PUT', 'description': 'Updates a note if the user is the owner'},
         {'Endpoint': '/note/<id>/', 'method': 'DELETE', 'description': 'Deletes a note if the user is the owner'},
@@ -98,6 +99,16 @@ def getNotes(request):
         return Response(serializer.data)
 
 
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def postScribbles(request):    
+    if request.method == 'POST':
+        data = request.data
+        note = Note.objects.create(owner=request.user, body=data, type="scribble3847261930")
+        serializer = NoteSerializer(note, many=False)
+        return Response(serializer.data)
+
+
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def getNote(request, pk):
@@ -124,6 +135,7 @@ def getNote(request, pk):
             return Response({"detail": "Only the owner can delete this note"}, status=403)
         note.delete()
         return Response('Note Deleted Successfully')
+
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
