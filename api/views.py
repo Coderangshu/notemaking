@@ -35,12 +35,11 @@ from django.utils.decorators import method_decorator
 @permission_classes([AllowAny])  # Allows any user to access the endpoint
 def tokenRefresh(request):
     refresh_token = request.data.get("refresh")
-
     if refresh_token is None:
         return Response({"error": "Refresh token is required"}, status=status.HTTP_400_BAD_REQUEST)
-
     try:
         token = RefreshToken(refresh_token)
+        token.access_token['username'] = refresh_token['username']
         access_token = str(token.access_token)
         return Response({"access": access_token}, status=status.HTTP_200_OK)
     except Exception as e:
@@ -63,6 +62,7 @@ def login(request):
         user = authenticate(username=serializer.validated_data['username'], password=serializer.validated_data['password'])
         if user:
             refresh = RefreshToken.for_user(user)
+            refresh['username'] = user.username
             access = refresh.access_token
             access['username'] = user.username
             return Response({'refresh': str(refresh), 'access': str(access)}, status=status.HTTP_200_OK)

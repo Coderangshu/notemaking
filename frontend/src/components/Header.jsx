@@ -14,6 +14,8 @@ const Header = () => {
     if (token) {
       try {
         const decodedToken = jwtDecode(token);
+        // console.log(decodedToken);
+        console.log(decodedToken.username);
         setUsername(decodedToken.username);
       } catch (error) {
         console.error("Invalid token:", error);
