@@ -155,6 +155,7 @@ dist
 
 # Python
 __pycache__
+venv
 
 # SQLite
 *.sqlite3
