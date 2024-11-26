@@ -1,3 +1,6 @@
+# Model: Represents a note created by a user with fields for the note’s content (body), creation and update timestamps (created, updated), and the type of note (type). Each note is linked to a specific user as its owner.
+# Model: Manages permissions for shared notes, linking a note to a user and specifying the permission type (READ or READ_WRITE). Ensures that each note-user combination is unique.
+
 from django.db import models
 from django.contrib.auth.models import User
 
