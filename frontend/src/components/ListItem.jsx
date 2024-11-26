@@ -64,4 +64,3 @@ const ListItem = ({ note, onDelete, refreshNotes }) => {
 };
 
 export default ListItem;
-

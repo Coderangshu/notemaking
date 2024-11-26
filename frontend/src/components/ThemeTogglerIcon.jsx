@@ -6,7 +6,7 @@ const transition = {
   stiffness: 200,
   damping: 10,
 };
-  
+
 const whileTap = {
   scale: 0.95,
   rotate: 15,
