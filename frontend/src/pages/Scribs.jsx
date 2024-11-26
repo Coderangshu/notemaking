@@ -59,17 +59,14 @@ export default function Scribs() {
   
 
   const updateNote = async (noteId) => {
-    authAxios.put(`/api/note/${noteId}/`, page).then((response) => {
+    const payload = {
+      body: JSON.stringify(page), // Convert the `page` object to a string
+    };
+    authAxios.put(`/api/note/${noteId}/`, payload).then((response) => {
       navigate("/");
     });
   };
-
-  //the request is failing it might be due to the fact that the session is not being properly handled
-  // useEffect(() => {
-  //   if (id !== "new") {
-  //     updateNote(id);
-  //   }
-  // }, [page]);
+  
   
   function onPointerDown() {
     if (action === ACTIONS.SELECT) return;
@@ -299,9 +296,10 @@ export default function Scribs() {
               <IoMdDownload size={"1.5rem"} color="#36454F"/>
             </button>
 
-            <button onClick={updateNote}>
-            <MdDone size={"1.5rem"} color="#36454F"/>
+            <button onClick={() => updateNote(id)}>
+              <MdDone size={"1.5rem"} color="#36454F"/>
             </button>
+
           </div>
         </div>
         {/* Canvas */}
