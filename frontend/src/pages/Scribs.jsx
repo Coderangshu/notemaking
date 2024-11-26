@@ -6,7 +6,6 @@ import { LuPencil } from "react-icons/lu";
 import { GiArrowCursor } from "react-icons/gi";
 import { FaRegCircle } from "react-icons/fa6";
 import authAxios from "../services/AxiosInterceptor";
-import { TiPlus } from "react-icons/ti";
 import { MdDone } from "react-icons/md";
 import { jsPDF } from "jspdf";
 

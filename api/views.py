@@ -32,6 +32,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from django.utils.decorators import method_decorator
 
+# Generates a new access token from a valid refresh token.
+# Checks for a valid refresh token; responds with appropriate HTTP status codes for errors.
 @api_view(['POST'])
 @permission_classes([AllowAny])  # Allows any user to access the endpoint
 def tokenRefresh(request):
@@ -46,6 +48,10 @@ def tokenRefresh(request):
     except Exception as e:
         return Response({"error": "Invalid refresh token"}, status=status.HTTP_401_UNAUTHORIZED)
 
+
+# Registers a new user using validated input data.
+# Uses SignupSerializer to ensure input is valid.
+# Creates a new User object.
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def signup(request):
@@ -55,6 +61,10 @@ def signup(request):
         return Response(UserSerializer(user).data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
+# Authenticates a user and issues JWT tokens.
+# Generates refresh and access tokens.
+# Handles invalid credentials or input errors.
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def login(request):
@@ -70,6 +80,8 @@ def login(request):
         return Response({"detail": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+# Logs out the user by blacklisting the refresh token.
+# Ensures the refresh token cannot be reused.
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def logout(request):
@@ -81,6 +93,9 @@ def logout(request):
     except Exception:
         return Response(status=status.HTTP_400_BAD_REQUEST)
 
+
+# Returns the user’s own notes and shared notes.
+# Creates a new note for the authenticated user.
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def getNotes(request):
@@ -99,6 +114,7 @@ def getNotes(request):
         return Response(serializer.data)
 
 
+# Creates a new scribble note for the user.
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def postScribbles(request):    
@@ -109,6 +125,7 @@ def postScribbles(request):
         return Response(serializer.data)
 
 
+# Retrieves, updates, or deletes a specific note based on user permissions.
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def getNote(request, pk):
@@ -137,6 +154,7 @@ def getNote(request, pk):
         return Response('Note Deleted Successfully')
 
 
+# Allows the owner to share a note with another user and assign permissions (read/write).
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def shareNote(request, pk):
