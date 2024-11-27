@@ -60,8 +60,8 @@ function App() {
               <Route path="/notes" exact element={<NotesListPage refreshList={refreshList} refreshNotes={refreshNotes}/>} />
               <Route path="/" exact element={<NotesListPage refreshList={refreshList} refreshNotes={refreshNotes}/>} />
               <Route path="/note/:id" element={<NotePage refreshNotes={refreshNotes}/>} />
-              <Route path="/scribble/:id" element={<Scribs/>} />
-              <Route path="/note/scribble/:id" element={<Scribble canvasHeight={canvasHeight} increaseCanvasHeight={increaseCanvasHeight} />} />
+              <Route path="/scribble/:id" element={<Scribs refreshNotes={refreshNotes}/>} />
+              <Route path="/note/scribble/:id" element={<Scribble canvasHeight={canvasHeight} increaseCanvasHeight={increaseCanvasHeight} refreshNotes={refreshNotes}/>} />
             </Routes>
           </section>
             <Footer/>

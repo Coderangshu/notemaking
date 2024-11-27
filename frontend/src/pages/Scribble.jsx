@@ -23,7 +23,7 @@ import { v4 as uuidv4 } from "uuid";
 import { ACTIONS } from "../constant";
 import { MdDone } from "react-icons/md";
 
-export default function Scribble({canvasHeight, increaseCanvasHeight }) {
+export default function Scribble({canvasHeight, increaseCanvasHeight, refreshNotes }) {
 
   const stageRef = useRef();
   const [action, setAction] = useState(ACTIONS.SELECT);
@@ -40,6 +40,7 @@ export default function Scribble({canvasHeight, increaseCanvasHeight }) {
 
   const createScribble = async () => {
     authAxios.post(`/api/notes/scribble/`, page).then((response) => {
+      refreshNotes();
       navigate("/");
     });
   }
@@ -60,6 +61,7 @@ export default function Scribble({canvasHeight, increaseCanvasHeight }) {
     }else if (id === 'new' && page !== null){
       createScribble()
     }
+    refreshNotes();
     navigate("/");
   };
 

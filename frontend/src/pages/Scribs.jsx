@@ -22,7 +22,7 @@ import { useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ACTIONS } from "../constant";
 
-export default function Scribs() {
+export default function Scribs({refreshNotes}) {
 
   const stageRef = useRef();
   const [action, setAction] = useState(ACTIONS.SELECT);
@@ -63,6 +63,7 @@ export default function Scribs() {
       body: JSON.stringify(page), // Convert the `page` object to a string
     };
     authAxios.put(`/api/note/${noteId}/`, payload).then((response) => {
+      refreshNotes();
       navigate("/");
     });
   };
