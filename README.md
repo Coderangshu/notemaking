@@ -1,169 +1,99 @@
+# Django React Notes App
 
-<!-- PROJECT LOGO -->
-<div align="center">
-  <h3 align="center">Django React Notes App</h3>
-
-  <p align="center">
-    A notes app using Django REST Framework and React Js styled using tailwind Css
-    <br />
-    <a href="https://github.com/coderangshu/notemaking"><strong>Explore the docs »</strong></a>
-    <br />
-    <!-- <a href="https://notes-django-react.up.railway.app/">View Site</a> -->
-    ·
-    <a href="https://github.com/coderangshu/notemaking/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/coderangshu/notemaking/issues">Request Feature</a>
-  </p>
-</div>
+## Overview
+A modern notes application built with **Django REST Framework** and **React.js**, styled using **Tailwind CSS**.
+The app supports text and scribble notes, user authentication, and theme toggling.
 
 
+## About the Project
+This project provides a secure, easy-to-use notes application with the following features:
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li><a href='#setting-up-backend-api'>Setting up Backend API</a></li>
-    <li>
-      <a href="#frontend-setting-up">Frontend setting up</a>
-    </li>
-  </ol>
-</details>
+- User authentication (signup, login, logout).
+- Persistent login using JWT-based tokens.
+- Create, edit, and manage notes (text and scribble).
+- Dark and light theme toggle.
+- Secure API endpoints with CSRF protection.
+- Features Screenshots
 
 
-## About The Project
-<br>
-
-<table width="100%"> 
-<tr>
-
-<td width="50%">
-<p align="center">
-Home Page Dark Mode
-</p>
-<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Home%20Page%20Dark.png">  
-</td>
-  <td width="50%">      
-<p align="center">
-Home Page Light Mode
-</p>
-<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Home%20Page%20light.png">
-</td> 
-</table>
-<br/>
-
-<table width="100%"> 
-<tr>
-<td width="50%">
-<p align="center">
-Note Page Dark Mode
-</p>
-<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Notes%20Dark.png">  
-</td>
-  <td width="50%">      
-<p align="center">
-Note Page Light Mode
-</p>
-<img src="https://github.com/coderangshu/notemaking/blob/master/frontend/public/Notes%20Ligth.png">
-</td> 
-</table>
-<br/>
+## Built With
+Django: Backend framework for API development.
+Django REST Framework: Simplifies API creation.
+React: Frontend library for building a single-page application.
+Tailwind CSS: Utility-first CSS framework for styling.
+SQLite3: Lightweight database for development.
 
 
-### Built With
-
-![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
-![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-
-<br>
-
-
-## Setting up Backend API 
-
-This is a sample for Django Project.
-
-Clone the project. This will download the GitHub respository files onto your local machine.
-
-```Shell
+## Setting Up the Backend API
+1. Clone the project repository:
+```bash
 git clone https://github.com/coderangshu/notemaking
 ```
 
-To get this project up and running you should start by having Python installed on your computer. It's advised you create a virtual environment to store your projects dependencies separately. You can install virtualenv with
-
-```
-pip install virtualenv
-```
-
-Clone or download this repository and open it in your editor of choice. In a terminal (mac/linux) or windows terminal, run the following command in the base directory of this project
-
-```
-virtualenv venv
+2. Navigate to the project directory:
+```bash
+cd notemaking
 ```
 
-That will create a new folder `env` in your project directory. Next activate it with this command on mac/linux:
-
+3. Create a virtual environment:
+```bash
+python -m venv venv
 ```
+
+4. Activate the virtual environment:
+- On Linux/Mac:
+```bash
 source venv/bin/activate
 ```
-
-Then install the project dependencies with
-
+- On Windows:
+```bash
+venv\Scripts\activate
 ```
+
+5. Install dependencies:
+```bash
 pip install -r requirements.txt
 ```
 
-Apply migrations and create your database
-```
+6. Apply migrations to set up the database:
+```bash
 python manage.py migrate
 ```
-Create a user with manage.py
-```
+
+7. Create a superuser:
+```bash
 python manage.py createsuperuser
 ```
 
-Now you can run the project with this command
-
-```
+8. Start the backend server:
+```bash
 python manage.py runserver
 ```
-
-<br>
-<br>
-<br>
+The API will be available at http://127.0.0.1:8000.
 
 
-## Frontend setting up
-
-### Frontend Instructions (Create React App) 
-
----> Navigate to the `frontend/` directory
-
-```Shell
+## Setting Up the Frontend
+1. Navigate to the frontend directory:
+```bash
 cd frontend
 ```
 
----> Install the project dependencies
-
-```Shell
+2. Install dependencies:
+```bash
 npm install
 ```
 
----> Start the development server on localhost:3000
-
-```Shell
+3. Start the development server:
+```bash
 npm start
 ```
+The application will be available at http://127.0.0.1:3000.
 
----> Open your browser and navigate to either `http://localhost:3000 or http://127.0.0.1:3000`
-<br>
-<br>
-<br>
 
+## Contributing
+Contributions are welcome! If you'd like to contribute:
+1. Fork the repository.
+2. Create a new branch (git checkout -b feature/YourFeature).
+3. Commit your changes (git commit -m "Add YourFeature").
+4. Push to the branch (git push origin feature/YourFeature).
+5. Open a Pull Request.
